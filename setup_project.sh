@@ -18,9 +18,9 @@ trap Hault_capture_and_archive SIGINT
 
 read -p "Enter a directory name:" from_user
 mkdir attendance_tracker_$from_user
-main_dir = attendance_tracker_$from_user #storing the long parent directory in the main_dir for simplification.
+main_dir=attendance_tracker_$from_user #storing the long parent directory in the main_dir for simplification.
 
-cp attendance_checker.py  $main_dir/
+cp attendance_checker.py $main_dir/
 
 mkdir -p $main_dir/Helpers
 
@@ -35,13 +35,13 @@ read -p "Do you want to change the treshhold values? (Yes(Y)/No(N))" answer
 if [[ $answer =~ ^[Yy]$ ]];
 then	
 read -p "Enter your preferred warning value:(default value is 75)" warning_value
-read -p "Enter your preferred failure value:(default value is 50) " failure_ value
+read -p "Enter your preferred failure value:(default value is 50)" failure_ value
 
 #This part of the script will use the sed command to reset treshold value 
 
-sed -i "s/\"warning\":[[:space:]][0-9]*/\"warning\": ${warning_value:-75} "$main_dir/Helpers/config.json
+sed -i "s/\"warning\":[[:space:]][0-9]*/\"warning\": ${warning_value:-75}/" $main_dir/Helpers/config.json
 
-sed -i "s/\"failure\":[[:space:]][0-9]*/\"failure\": ${failure_value:-50} "$main_dir/Helpers/config.json
+sed -i "s/\"failure\":[[:space:]][0-9]*/\"failure\": ${failure_value:-50}/" $main_dir/Helpers/config.json
 fi
 #This part of the script will run a a check to see if python is installed
 echo "Running a background health check !!!"
