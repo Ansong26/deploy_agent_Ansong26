@@ -91,3 +91,6 @@ It uses:
 A success or failure message is displayed
 
 REMEMBER: This script should be run in a folder that already contains all the required files.
+
+Plaese find here the vidoe link https://drive.google.com/file/d/1VFS-WP5NzyVLCnjqMt0-nLWoin8ApTP7/view?usp=sharing
+Thank you.
